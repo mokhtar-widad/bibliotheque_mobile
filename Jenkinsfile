@@ -1,38 +1,34 @@
 pipeline {
     agent any
 
-    // tools {
-    //     gradle 'Gradle-7'  // SUPPRIMÉ car on utilise gradlew
-    // }
-
     environment {
-        ANDROID_HOME = "/opt/android-sdk"   // Chemin SDK Android (à adapter selon ta machine)
-        PATH = "$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH"
+        // Chemin SDK Android (à adapter si nécessaire)
+        ANDROID_HOME = "C:\\Users\\widad\\AppData\\Local\\Android\\Sdk"
+        PATH = "${env.ANDROID_HOME}\\platform-tools;${env.ANDROID_HOME}\\tools;${env.PATH}"
     }
 
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/mokhtar-widad/bibliotheque_mobile.git'
-
             }
         }
 
         stage('Build APK') {
             steps {
-                sh './gradlew clean assembleDebug'
+                bat 'gradlew.bat clean assembleDebug'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh './gradlew test'
+                bat 'gradlew.bat test'
             }
         }
 
         stage('Archive APK') {
             steps {
-                archiveArtifacts artifacts: 'app/build/outputs/apk/debug/app-debug.apk', fingerprint: true
+                archiveArtifacts artifacts: 'app\\build\\outputs\\apk\\debug\\app-debug.apk', fingerprint: true
             }
         }
 
@@ -45,7 +41,7 @@ pipeline {
                     COPY app/build/outputs/apk/debug/app-debug.apk /app/app-debug.apk
                     CMD ["echo", "APK prêt dans le conteneur"]
                     """
-                    sh 'docker build -t android-apk:latest .'
+                    bat 'docker build -t android-apk:latest .'
                 }
             }
         }
