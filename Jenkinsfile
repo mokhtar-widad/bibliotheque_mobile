@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-        gradle 'Gradle-7'  // Nom configuré dans Jenkins (Manage Jenkins > Global Tool Configuration)
-    }
+    // tools {
+    //     gradle 'Gradle-7'  // SUPPRIMÉ car on utilise gradlew
+    // }
 
     environment {
         ANDROID_HOME = "/opt/android-sdk"   // Chemin SDK Android (à adapter selon ta machine)
@@ -13,7 +13,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/toncompte/tonprojet.git'
+                git branch: 'main', url: 'https://github.com/mokhtar-widad/bibliotheque_mobile.git'
+
             }
         }
 
