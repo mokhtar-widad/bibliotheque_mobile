@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Image de fond stylisée -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradient_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Effet d'onde stylisé en haut -->
+    <View
+        android:id="@+id/waveTop"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/wave_top_background"
+        android:alpha="0.7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Panel principal avec coin arrondis -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_panel_background"
+        android:alpha="0.9"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    
+    <!-- Cercle brillant pour le logo -->
+    <View
+        android:id="@+id/logoGlow"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/glow_circle_background"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+        
+    <!-- Cercle interne pour le logo -->
+    <View
+        android:id="@+id/logoBackground"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/circle_background"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="@id/logoGlow"
+        app:layout_constraintBottom_toBottomOf="@id/logoGlow"
+        app:layout_constraintStart_toStartOf="@id/logoGlow"
+        app:layout_constraintEnd_toEndOf="@id/logoGlow" />
+        
+    <!-- Logo avec ombre progressive -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_librarian_woman"
+        android:tint="@color/white"
+        android:elevation="10dp"
+        android:contentDescription="Logo bibliothèque"
+        app:layout_constraintTop_toTopOf="@id/logoBackground"
+        app:layout_constraintBottom_toBottomOf="@id/logoBackground"
+        app:layout_constraintStart_toStartOf="@id/logoBackground"
+        app:layout_constraintEnd_toEndOf="@id/logoBackground" />
+
+    <!-- Titre avec typographie moderne et ombrage -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_message"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.07"
+        android:shadowColor="#80000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="4"
+        android:textAlignment="center"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="24dp"
+        android:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/logoBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Ligne décorative sous le titre -->
+    <View
+        android:id="@+id/titleDivider"
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:background="@color/white"
+        android:layout_marginTop="16dp"
+        android:alpha="0.7"
+        android:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Sous-titre avec effet de transparence et ombrage -->
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_profile"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:letterSpacing="0.05"
+        android:shadowColor="#40000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:alpha="0.9"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="16dp"
+        android:elevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/titleDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Conteneur des options avec espacement optimisé -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginBottom="80dp"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Option Étudiant avec effet de vague -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/studentCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="32dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/primary_light"
+            app:cardElevation="14dp"
+            android:layout_marginVertical="12dp"
+            app:rippleColor="@color/primary_light"
+            app:cardBackgroundColor="@color/primary"
+            android:clickable="true"
+            android:focusable="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Cercle autour de l'icône -->
+                <View
+                    android:id="@+id/studentIconBackground"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/student_icon_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <ImageView
+                    android:id="@+id/studentIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_student"
+                    android:tint="@color/white"
+                    android:elevation="2dp"
+                    app:layout_constraintStart_toStartOf="@id/studentIconBackground"
+                    app:layout_constraintEnd_toEndOf="@id/studentIconBackground"
+                    app:layout_constraintTop_toTopOf="@id/studentIconBackground"
+                    app:layout_constraintBottom_toBottomOf="@id/studentIconBackground" />
+
+                <TextView
+                    android:id="@+id/studentButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/student"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@id/studentIconBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Option Bibliothécaire avec effet de vague -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/librarianCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="32dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#FFD180"
+            app:cardElevation="14dp"
+            android:layout_marginVertical="12dp"
+            app:rippleColor="#FFD180"
+            app:cardBackgroundColor="@color/secondary"
+            android:clickable="true"
+            android:focusable="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Cercle autour de l'icône -->
+                <View
+                    android:id="@+id/librarianIconBackground"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/librarian_icon_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <ImageView
+                    android:id="@+id/librarianIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_librarian_woman"
+                    android:tint="@color/white"
+                    android:elevation="2dp"
+                    app:layout_constraintStart_toStartOf="@id/librarianIconBackground"
+                    app:layout_constraintEnd_toEndOf="@id/librarianIconBackground"
+                    app:layout_constraintTop_toTopOf="@id/librarianIconBackground"
+                    app:layout_constraintBottom_toBottomOf="@id/librarianIconBackground" />
+
+                <TextView
+                    android:id="@+id/librarianButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/librarian"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@id/librarianIconBackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- Citation élégante en bas -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Votre passion pour la lecture commence ici"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:letterSpacing="0.05"
+        android:shadowColor="#80000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:alpha="0.9"
+        android:layout_marginBottom="30dp"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

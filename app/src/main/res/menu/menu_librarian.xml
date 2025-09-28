@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add_book"
+            android:icon="@drawable/ic_add_book"
+            android:title="Ajouter un livre" />
+        <item
+            android:id="@+id/nav_available_books"
+            android:icon="@drawable/ic_available_books"
+            android:title="Livres disponibles" />
+        <item
+            android:id="@+id/nav_borrowed_books"
+            android:icon="@drawable/ic_borrowed_books"
+            android:title="Livres empruntés" />
+        <item
+            android:id="@+id/nav_blacklist"
+            android:icon="@drawable/ic_blacklist"
+            android:title="Liste noire" />
+    </group>
+    <group android:id="@+id/group_logout">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Déconnexion" />
+    </group>
+</menu> 

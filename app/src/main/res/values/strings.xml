@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Moudou Livre</string>
+    <string name="welcome_message">Bienvenue sur Moudou Livre</string>
+    <string name="choose_profile">Choisissez votre profil</string>
+    <string name="student">Étudiant</string>
+    <string name="librarian">Bibliothécaire</string>
+    <string name="student_auth">Inscription &amp; Connexion</string>
+    <string name="librarian_auth">Connexion</string>
+    <string name="navigation_drawer_open">Ouvrir le menu</string>
+    <string name="navigation_drawer_close">Fermer le menu</string>
+    <string name="nav_header_title">Bibliothécaire</string>
+    <string name="nav_header_subtitle">Gestionnaire de la bibliothèque</string>
+    <string name="nav_header_desc">Icône du bibliothécaire</string>
+</resources>

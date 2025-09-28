@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <!-- Tête -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,4.5C10.07,4.5 8.5,6.07 8.5,8C8.5,9.93 10.07,11.5 12,11.5C13.93,11.5 15.5,9.93 15.5,8C15.5,6.07 13.93,4.5 12,4.5Z" />
+    
+    <!-- Lunettes -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10.3,7.8C10.3,8.2 10,8.5 9.6,8.5C9.2,8.5 8.9,8.2 8.9,7.8C8.9,7.4 9.2,7.1 9.6,7.1C10,7.1 10.3,7.4 10.3,7.8Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15.1,7.8C15.1,8.2 14.8,8.5 14.4,8.5C14,8.5 13.7,8.2 13.7,7.8C13.7,7.4 14,7.1 14.4,7.1C14.8,7.1 15.1,7.4 15.1,7.8Z" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="0.5"
+        android:pathData="M9.6,7.8L14.4,7.8" />
+    
+    <!-- Chignon -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,4C13,4 14,4.2 14.5,4.7C15,5.2 15.2,5.5 15.2,6C15.2,6.5 15,6.8 14.5,7.3C14,7.8 13,8 12,8C11,8 10,7.8 9.5,7.3C9,6.8 8.8,6.5 8.8,6C8.8,5.5 9,5.2 9.5,4.7C10,4.2 11,4 12,4Z" />
+    
+    <!-- Corps avec livre -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,12C9.33,12 4,13.34 4,16V19H9L9,16.5L13,17.5V19H20V16C20,13.34 14.67,12 12,12Z" />
+    
+    <!-- Livre dans les mains -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,15L15,15L15,17L9,17Z" />
+</vector>
