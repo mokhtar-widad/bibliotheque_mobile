@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Chemin SDK Android (à adapter si nécessaire)
-        ANDROID_HOME = "C:\\Users\\widad\\AppData\\Local\\Android\\Sdk"
+        ANDROID_HOME = "C:\\Users\\widad\\AppData\\Local"
         PATH = "${env.ANDROID_HOME}\\platform-tools;${env.ANDROID_HOME}\\tools;${env.PATH}"
     }
 
